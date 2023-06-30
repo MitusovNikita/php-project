@@ -1,0 +1,11 @@
+version: "3"
+services:
+  web:
+    container_name: php-project
+    build: .
+    ports:
+      - "82:80"
+    volumes:
+      - ./:/data/www/html
+      - ./docker-conf/apache:/etc/apache2/sites-enabled/
+      - ./docker-conf/php/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
